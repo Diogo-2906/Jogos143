@@ -18,7 +18,7 @@ namespace Jogos143.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Raft()
         {
             return View();
         }
