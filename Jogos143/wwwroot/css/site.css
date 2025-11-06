@@ -72,6 +72,7 @@ body {
 }
 
 .input-icon {
+    cursor:pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,6 +126,11 @@ body {
 .item-description {
     font-size: 14px;
     color: #666;
+}
+
+#no_results {
+    display: none;
+    text-align: center;
 }
 
 .game-list {
