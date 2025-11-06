@@ -18,7 +18,7 @@ namespace Jogos143.Controllers
             return View();
         }
 
-        public IActionResult Raft()
+        public IActionResult JogosAlfa()
         {
             return View();
         }

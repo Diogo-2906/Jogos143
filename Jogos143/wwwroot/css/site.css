@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', Sans Serif;
+}
+
 html {
   font-size: 14px;
 }
@@ -18,9 +27,9 @@ html {
 }
 
 body {
+    min-height: 100vh;
     background-color: #3f3f3f;
     margin: 0;
-    font-family: Arial, sans-serif;
 }
 
 .top-header {
@@ -46,12 +55,84 @@ body {
     color: #ffeaa7;
 }
 
-.game-list {
+
+.item-image img {
+    width: 100px;
+    height: 120px;
+    border-radius: 8px;
+}
+
+.input-group {
     display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 8px 16px 8px 8px;
+    border-radius:24px;
+    gap: 10px;
+}
+
+.input-icon {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 35px;
-    margin-top: 40px;
-    flex-wrap: wrap;
+    width: 32px;
+    height: 32px;
+    background-color: yellow;
+    border-radius: 100%;
+    flex-shrink: 0;
+}
+
+.input-field{
+    flex: 1;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+.input-field:focus {
+        outline: none;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    margin-top: 12px;
+    background-color:white;
+    border-radius: 24px;
+    padding: 14px;
+    width: 40%;
+    max-height: 70%;
+    overflow-y:auto;
+}
+
+.item {
+    display: flex;
+    gap: 12px;
+}
+
+.item-title {
+    font-size: 18px;
+    color: #333;
+}
+
+.item-subititle {
+    font-size: 12px;
+    color: #666;
+}
+
+.item-description {
+    font-size: 14px;
+    color: #666;
+}
+
+.game-list {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+    justify-items: center;
+    padding: 15px;
 }
 
 .game-card {
