@@ -1,5 +1,161 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<style>
+    body {
+        background: #0a0415;
+        font-family: 'Inter', sans-serif;
+        color: #ffffff;
+    }
+
+    .game-page {
+        display: flex;
+        gap: 50px;
+        padding: 50px;
+    }
+
+    .left-panel {
+        width: 65%;
+    }
+
+    .main-image img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 0 35px rgba(168, 94, 255, 0.55);
+        transition: 0.3s;
+    }
+
+        .main-image img:hover {
+            transform: scale(1.01);
+        }
+
+    .thumbs {
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+        .thumbs img {
+            width: 120px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.25s;
+            box-shadow: 0 0 12px rgba(168, 94, 255, 0.4);
+        }
+
+            .thumbs img:hover {
+                transform: scale(1.07);
+                box-shadow: 0 0 18px rgba(168, 94, 255, 0.85);
+            }
+
+    .descricao {
+        margin-top: 25px;
+        line-height: 1.6rem;
+        color: #d8caff;
+    }
+
+    .right-panel {
+        width: 35%;
+        background: rgba(255,255,255,0.05);
+        padding: 25px;
+        border-radius: 14px;
+        border: 1px solid rgba(168,94,255,0.35);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 0 25px rgba(168,94,255,0.25);
+    }
+
+    .titulo {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #cda0ff;
+        text-shadow: 0 0 8px rgba(168,94,255,0.8);
+    }
+
+    .tag {
+        display: inline-block;
+        background: rgba(168,94,255,0.25);
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+    }
+
+    .preco {
+        margin-top: 20px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #e7d0ff;
+    }
+
+    .btn-comprar, .btn-carrinho {
+        width: 100%;
+        padding: 14px;
+        border-radius: 8px;
+        border: none;
+        margin-top: 14px;
+        font-size: 1rem;
+        cursor: pointer;
+        color: white;
+        transition: 0.3s;
+    }
+
+    .btn-comprar {
+        background: linear-gradient(90deg, #a85eff, #873bff);
+        box-shadow: 0 0 12px rgba(168,94,255,0.6);
+    }
+
+        .btn-comprar:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 22px rgba(168,94,255,1);
+        }
+
+    .btn-carrinho {
+        background: rgba(168,94,255,0.25);
+    }
+
+        .btn-carrinho:hover {
+            background: rgba(168,94,255,0.45);
+        }
+
+    .info {
+        margin-top: 25px;
+        font-size: 0.95rem;
+        color: #d6c7ff;
+        line-height: 1.5rem;
+    }
+</style>
+
+<div class="game-page">
+    <div class="galeria">
+        <img id="principal" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/958320/capsule_616x353.jpg?t=1667406296" class="principal">
+
+        <div class="miniaturas">
+            <img class="mini" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/958320/ss_8dfde93f122dd52b82d425ad47f7290e94b6125f.1920x1080.jpg?t=1667406296">
+            <img class="mini" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/958320/ss_2d3bbfc78fcd23d2bd04889afa357bc4dfed4183.1920x1080.jpg?t=1667406296">
+            <img class="mini" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/958320/ss_3b46376ca1ff1eadab0887e33abadaed77d3ec5d.1920x1080.jpg?t=1667406296">
+        </div>
+    </div>
+
+
+    <div class="right-panel">
+        <h1 class="titulo">A Front too far Normandy</h1>
+
+        <button class="btn-comprar">Baixar Agora</button>
+
+        <div class="info">
+            <p><strong>Lançamento:</strong> 20/12/2018</p>
+        </div>
+        <p class="descricao">
+            "A Front Too Far" é um jogo de tiro em primeira pessoa (FPS) de mundo aberto ambientado na Segunda Guerra Mundial,
+            onde o jogador assume o papel de um membro da Resistência Francesa para completar missões, gerenciar recursos como munição e fome, e combater nazistas.
+        </p>
+    </div>
+</div>
+
+<script>
+    const principal = document.getElementById("principal");
+
+    document.querySelectorAll(".mini").forEach(mini => {
+      mini.addEventListener("click", () => {
+        principal.src = mini.src;
+      });
+    });
+</script>
+
+
