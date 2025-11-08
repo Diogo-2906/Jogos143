@@ -29,6 +29,7 @@ html {
 body {
     min-height: 100vh;
     background-color: #3f3f3f;
+  
     margin: 0;
 }
 
@@ -63,6 +64,7 @@ body {
 }
 
 .input-group {
+    margin-top: 12px;
     display: flex;
     align-items: center;
     background-color: #ffffff;
@@ -103,14 +105,34 @@ body {
     background-color:white;
     border-radius: 24px;
     padding: 14px;
-    width: 40%;
+    width: 50%;
     max-height: 70%;
     overflow-y:auto;
+    margin-left:24%;
 }
+
+.linha {
+    display: flex;
+    align-items: center; 
+    gap: 12px; 
+}
+
+    .linha hr {
+        flex: 1; 
+        border-color:black;
+        border-top: 1px solid black; 
+    }
+
 
 .item {
     display: flex;
     gap: 12px;
+}
+
+.item a {
+    display: flex;
+    gap: 12px;
+    text-decoration: none;
 }
 
 .item-title {
@@ -165,11 +187,3 @@ body {
             color: yellow; 
         }
 
-.main-footer {
-    background-color: #2e2e2e;
-    padding: 20px 0;
-    text-align: center;
-    color: #dcdcdc;
-    font-size: 14px;
-    margin-top: 50px;
-}
