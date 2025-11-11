@@ -17,29 +17,28 @@
                 <span class="logo-text">Jogos143</span>
             </a>
         </div>
-                  
-                    <button class="navbar-toggler ms-auto d-flex" type="button"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar"
-                            aria-controls="offcanvasNavbar">
-                        <span class=" bi-list fs-1 text-white" aria-hidden="true"></span>
-                    </button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                <h1 class="offcanvas-title text-white" id="offcanvasNavbarLabel"><i class="bi bi-house-door-fill"></i> Menu</h1>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav" style="line-height: 1.5; font-size: larger">
-                    <li class="nav-item"><a class="nav-link text-white " asp-controller="Home" asp-action="JogosAlfa"><i class="bi bi-card-list"></i> Lista A-Z</a></li>
-                     
-                            </ul>
-                        </div>
-                    </div>
+        <div>
+            <button class="navbar-toggler ms-auto d-flex" type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar">
+                <span class=" bi-list fs-1 text-white" aria-hidden="true"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h1 class="offcanvas-title text-white" id="offcanvasNavbarLabel"><i class="bi bi-house-door-fill"></i> Menu
+                        </h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav" style="line-height: 1.5; font-size: larger">
+                        <li class="nav-item"><a class="nav-link text-white " asp-controller="Home" asp-action="JogosAlfa">
+                            <i class="bi bi-card-list"></i> Lista A-Z</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </nav>
+        </div>
     </header>
     <div class="container text-white">
         <main role="main" class="pb-3">
@@ -47,7 +46,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top">
         <div class="container text-center">
             © 2025 Jogos143 — Todos os direitos reservados.
         </div>

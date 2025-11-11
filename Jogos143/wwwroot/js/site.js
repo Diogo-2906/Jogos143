@@ -1,41 +1,36 @@
 ﻿const searchInput = document.getElementById('search');
 
 searchInput.addEventListener('input', (event) => {
-    const value = formatstring(event.target.value);
-
-    const items = document.querySelectorAll('.items .item');
+    const value = formatString(event.target.value);
+    const sections = document.querySelectorAll('.letter-section');
     const noResults = document.getElementById('no_results');
-
     let hasResults = false;
 
-    if (value != '') {
-        items.forEach((item) => {
-            const itemTitle = item.querySelector('.item-title').textContent;
-            const itemDescription = item.querySelector('.item-description').textContent;
-            if (formatstring(itemTitle).indexOf(value) !== -1 || formatstring(itemDescription).indexOf(value) !== -1) {
-                item.style.display = 'flex';
+    sections.forEach(section => {
+        const items = section.querySelectorAll('.item');
+        let visibleCount = 0;
 
-                hasResults = true;
+        items.forEach(item => {
+            const title = formatString(item.querySelector('.item-title').textContent);
+            const description = formatString(item.querySelector('.item-subtitle')?.textContent || '');
+
+            if (value === '' || title.includes(value) || description.includes(value)) {
+                item.style.display = 'flex';
+                visibleCount++;
             } else {
                 item.style.display = 'none';
             }
         });
 
-        if (hasResults) {
-            noResults.style.display = 'none';
-        } else {
-            noResults.style.display = 'block';
-        }
-    } else {
-        items.forEach(item => item.style.display = 'flex');
+        // Exibe ou esconde a letra inteira
+        section.style.display = visibleCount > 0 ? 'block' : 'none';
 
-        noResults.style.display = 'none';
-    }
+        if (visibleCount > 0) hasResults = true;
+    });
 
+    noResults.style.display = hasResults ? 'none' : 'block';
 });
 
-function formatstring(value) {
-    return value
-        .toLowerCase()
-        .trim()
+function formatString(value) {
+    return value.toLowerCase().trim();
 }
