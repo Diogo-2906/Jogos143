@@ -72,5 +72,15 @@ namespace Jogos143.Controllers
         {
             return View();
         }
+
+        public IActionResult PizzaTower()
+        {
+            return View();
+        }
+
+        public IActionResult TheRPG()
+        {
+            return View();
+        }
     }
 }
