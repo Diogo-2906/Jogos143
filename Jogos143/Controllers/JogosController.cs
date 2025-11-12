@@ -82,5 +82,20 @@ namespace Jogos143.Controllers
         {
             return View();
         }
+
+        public IActionResult HouseDesigner()
+        {
+            return View();
+        }
+
+        public IActionResult PhoenixWr()
+        {
+            return View();
+        }
+
+        public IActionResult CyberShock()
+        {
+            return View();
+        }
     }
 }

@@ -27,7 +27,9 @@ html {
 }
 
 
+
 body {
+    
     min-height: 100%;
     background: radial-gradient(circle at 35% 20%, #1a1425 0%, #0f0d14 40%, #09070b 100%);
     background-attachment: fixed;
