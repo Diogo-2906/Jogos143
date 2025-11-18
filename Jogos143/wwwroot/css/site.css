@@ -91,6 +91,14 @@ body {
 }
 
 
+.slide {
+    display: block;
+    max-height: 35rem;
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
 
 .container {
     padding-top: 12px
