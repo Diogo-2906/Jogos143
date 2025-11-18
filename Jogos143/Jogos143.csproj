@@ -37,6 +37,7 @@
     <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\IMGJ\" />
     <Folder Include="wwwroot\HelpImg\" />
+    <Folder Include="wwwroot\Video\" />
   </ItemGroup>
 
 </Project>
