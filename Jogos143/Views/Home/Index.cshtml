@@ -2,6 +2,9 @@
     ViewData["Title"] = "Home Page";
 }
 
+<h2 class="Titulo-Classes">
+    Jogos Novos da Semana
+</h2>
 
 <div class="game-carousel">
 
@@ -10,40 +13,48 @@
     <div class="carousel-track">
 
         <div class="slide">
-            <img src="~/IMGJ/Ace1.jpg" class="slide-img" />
+            <video autoplay muted playsinline loop class="slide-video">
+                <source src="~/Video/PhoenixWr.mp4" type="video/mp4">
+                Não foi possível carregar o vídeo
+            </video>
 
             <div class="slide-info">
-                <h1>EA SPORTS FC™ 26</h1>
-
-                <div class="mini-images">
-                    <img src="~/IMGJ/Ace1.jpg" />
-                    <img src="~/IMGJ/Ace2.jpeg" />
-                    <img src="~/IMGJ/Ace3.jpg" />
-                    <img src="~/IMGJ/Ace4.jpg" />
-                </div>
-
-                <p class="status">Já disponível</p>
-                <span class="tag">Popular</span>
-                <p class="preco">R$ 299,00</p>
+                <h1>Phoenix Wright: Ace Attorney Trilogy</h1>
+                <p class="Descricao">  A descrição de Ace Attorney Trilogy é uma compilação que reúne os três primeiros jogos da série de visual novel de aventura jurídica,
+                    onde o jogador assume o papel do advogado de defesa Phoenix Wright.
+                    </p>
+                <button onclick="window.location.href='@Url.Action("PhoenixWr", "Jogos")'" class="btn-jogo" type="button">Ir Baixar</button>
             </div>
         </div>
 
         <div class="slide">
-            <img src="~/IMGJ/Pizza1.jpg" class="slide-img" />
+            <video autoplay muted playsinline loop class="slide-video">
+                <source src="~/Video/PizzaTower.mp4" type="video/mp4">
+                Não foi possível carregar o vídeo
+            </video>
 
             <div class="slide-info">
-                <h1>Cyber Adventure</h1>
+                <h1>Pizza Tower</h1>
+                <p class="descricao">
+                    Pizza Tower é um jogo de plataforma 2D de ritmo acelerado e excêntrico,
+                    fortemente inspirado na série Wario Land e com jogabilidade que lembra a velocidade dos jogos do Sonic.
+                </p>
+                <button onclick="window.location.href='@Url.Action("PizzaTower", "Jogos")'" class="btn-jogo" type="button">Ir Baixar</button>
+            </div>
+        </div>
 
-                <div class="mini-images">
-                    <img src="~/IMGJ/Pizza1.jpg" />
-                    <img src="~/IMGJ/Pizza2.jpg" />
-                    <img src="~/IMGJ/Pizza3.jpg" />
-                    <img src="~/IMGJ/Pizza4.jpg" />
-                </div>
+        <div class="slide">
+            <video autoplay muted playsinline loop class="slide-video">
+                <source src="~/Video/THERPG.mp4" type="video/mp4">
+                Não foi possível carregar o vídeo
+            </video>
 
-                <p class="status">Em breve</p>
-                <span class="tag">Novo</span>
-                <p class="preco">R$ 199,00</p>
+            <div class="slide-info">
+                <h1>THE RPG</h1>
+                <p class="Descricao">
+                    "The RPG" é um jogo satírico de mundo aberto e aventura que brinca com os clichês e a complexidade dos jogos de RPG tradicionais, como Skyrim.
+                </p>
+                <button onclick="window.location.href='@Url.Action("TheRPG", "Jogos")'" class="btn-jogo" type="button">Ir Baixar</button>
             </div>
         </div>
 
@@ -54,7 +65,9 @@
 </div>
 
 
-
+<h2 class="Titulo-Classes">
+    Lista de Jogos
+</h2>
 
 
 <div class="game-list">
@@ -220,17 +233,26 @@
 
     <style>
 
+        .Titulo-Classes {
+        margin-bottom: 2rem;
+        font-family: "Ultra", serif;
+        font-style: normal;
+        }
+
+
             /*Caroussel*/
         .game-carousel {
             width: 100%;
             height: 420px;
-            background: linear-gradient(to right, #0a1b2b, #132c46);
+            background: rgba(48, 0, 80, 0.35);
+            backdrop-filter: blur(10px);
             border-radius: 10px;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
             padding: 0;
+            margin-bottom:5rem;
         }
 
         .carousel-track {
@@ -247,7 +269,7 @@
             padding: 10px;
         }
 
-        .slide-img {
+        .slide-video {
             width: 60%;
             height: 390px;
             object-fit: cover;
@@ -255,24 +277,39 @@
         }
 
         .slide-info {
+            padding: 20px;
             width: 40%;
             color: white;
         }
 
-        .mini-images {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
+        .slide-info p {
+            margin-top: 2rem;
         }
 
-            .mini-images img {
-                width: 100%;
-                height: 85px;
-                object-fit: cover;
-                border-radius: 6px;
+         .btn-jogo, .btn-carrinho {
+        width: 100%;
+        padding: 14px;
+        border-radius: 8px;
+        border: none;
+        margin-top: 10%;
+        font-size: 1rem;
+        cursor: pointer;
+        color: white;
+        transition: 0.3s;
+    }
+
+        .btn-jogo {
+            background: linear-gradient(90deg, #a85eff, #873bff);
+            box-shadow: 0 0 12px rgba(168,94,255,0.6);
+        }
+
+            .btn-jogo:hover {
+                transform: scale(1.03);
+                box-shadow: 0 0 22px rgba(168,94,255,1);
             }
 
         .nav-btn {
+            z-index: 9999;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -321,6 +358,7 @@
             index = (index - 1 + slides.length) % slides.length;
             updateSlide();
         };
+
     </script>
 
 
