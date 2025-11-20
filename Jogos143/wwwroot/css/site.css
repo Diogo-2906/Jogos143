@@ -91,15 +91,6 @@ body {
 }
 
 
-.slide {
-    display: block;
-    max-height: 32rem;
-    width: 100%;
-    border-radius: 20px;
-    margin-bottom: 50px;
-}
-
-
 .container {
     padding-top: 12px
 }
@@ -379,3 +370,4 @@ body {
         max-width: 50%;
         line-height: 2;
     }
+

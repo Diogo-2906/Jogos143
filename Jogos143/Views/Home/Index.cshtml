@@ -2,32 +2,59 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="carouselExampleIndicators" class="carousel slide">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+<div class="game-carousel">
+
+    <button class="nav-btn prev-btn">&#10094;</button>
+
+    <div class="carousel-track">
+
+        <div class="slide">
+            <img src="~/IMGJ/Ace1.jpg" class="slide-img" />
+
+            <div class="slide-info">
+                <h1>EA SPORTS FC™ 26</h1>
+
+                <div class="mini-images">
+                    <img src="~/IMGJ/Ace1.jpg" />
+                    <img src="~/IMGJ/Ace2.jpeg" />
+                    <img src="~/IMGJ/Ace3.jpg" />
+                    <img src="~/IMGJ/Ace4.jpg" />
+                </div>
+
+                <p class="status">Já disponível</p>
+                <span class="tag">Popular</span>
+                <p class="preco">R$ 299,00</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="~/IMGJ/Pizza1.jpg" class="slide-img" />
+
+            <div class="slide-info">
+                <h1>Cyber Adventure</h1>
+
+                <div class="mini-images">
+                    <img src="~/IMGJ/Pizza1.jpg" />
+                    <img src="~/IMGJ/Pizza2.jpg" />
+                    <img src="~/IMGJ/Pizza3.jpg" />
+                    <img src="~/IMGJ/Pizza4.jpg" />
+                </div>
+
+                <p class="status">Em breve</p>
+                <span class="tag">Novo</span>
+                <p class="preco">R$ 199,00</p>
+            </div>
+        </div>
+
     </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="~/Video/Carrosel1.gif" class="slide" alt="Slide 1">
-        </div>
-        <div class="carousel-item">
-            <img src="~/img/Carrosel2.png" class="slide" alt="Slide 2">
-        </div>
-        <div class="carousel-item">
-            <img src="~/img/Carrosel3.png" class="slide" alt="Slide 3">
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+
+    <button class="nav-btn next-btn">&#10095;</button>
+
 </div>
+
+
+
 
 
 <div class="game-list">
@@ -186,4 +213,119 @@
         </a>
     </div>
 
-    </div>
+
+
+
+
+
+    <style>
+
+            /*Caroussel*/
+        .game-carousel {
+            width: 100%;
+            height: 420px;
+            background: linear-gradient(to right, #0a1b2b, #132c46);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            display: flex;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .slide-img {
+            width: 60%;
+            height: 390px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .slide-info {
+            width: 40%;
+            color: white;
+        }
+
+        .mini-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+            .mini-images img {
+                width: 100%;
+                height: 85px;
+                object-fit: cover;
+                border-radius: 6px;
+            }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.4);
+            border: none;
+            color: white;
+            font-size: 40px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        .nav-btn:hover {
+            background: rgba(0,0,0,0.6);
+        }
+
+
+    </style>
+
+
+    
+            
+              <script>
+        const track = document.querySelector(".carousel-track");
+        const slides = document.querySelectorAll(".slide");
+        let index = 0;
+
+        function updateSlide() {
+            track.style.transform = `translateX(${index * -100}%)`;
+        }
+
+        document.querySelector(".next-btn").onclick = () => {
+            index = (index + 1) % slides.length;
+            updateSlide();
+        };
+
+        document.querySelector(".prev-btn").onclick = () => {
+            index = (index - 1 + slides.length) % slides.length;
+            updateSlide();
+        };
+    </script>
+
+
+
+
+    
+
+    
