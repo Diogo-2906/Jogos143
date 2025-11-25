@@ -14,16 +14,16 @@
 
         <div class="slide">
             <video autoplay muted playsinline loop class="slide-video">
-                <source src="~/Video/PhoenixWr.mp4" type="video/mp4">
+                <source src="~/Video/Rooftops & Alleys - Launch Trailer.mp4" type="video/mp4">
                 Não foi possível carregar o vídeo
             </video>
 
             <div class="slide-info">
-                <h1>Phoenix Wright: Ace Attorney Trilogy</h1>
-                <p class="Descricao">  A descrição de Ace Attorney Trilogy é uma compilação que reúne os três primeiros jogos da série de visual novel de aventura jurídica,
-                    onde o jogador assume o papel do advogado de defesa Phoenix Wright.
+                <h1>Rooftops & Alleys: The Parkour Game</h1>
+                <p class="Descricao">
+                    "Rooftops & Alleys" é um jogo de parkour que permite aos jogadores correr, saltar e realizar manobras complexas em cenários urbanos, explorando mapas com liberdade total, seja em modos de um jogador ou multiplayer (como pega-pega e batalha de truques).
                     </p>
-                <button onclick="window.location.href='@Url.Action("PhoenixWr", "Jogos")'" class="btn-jogo" type="button">Ir Baixar</button>
+                <button onclick="window.location.href='@Url.Action("Rooftops", "Jogos")'" class="btn-jogo" type="button">Ir Baixar</button>
             </div>
         </div>
 
@@ -226,6 +226,14 @@
         </a>
     </div>
 
+    <div class="game-card">
+        <a asp-controller="Jogos" asp-action="rooftops" class="a">
+            <img src="/img/Rooftops.jpg" />
+            <p>
+                Rooftops & Alleys
+            </p>
+        </a>
+    </div>
 
 
 
